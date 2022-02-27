@@ -13,3 +13,11 @@
 - [Triangle](https://www.codingninjas.com/codestudio/problems/triangle_1229398)
 - [Maximum Path Sum In The Matrix](https://www.codingninjas.com/codestudio/problems/maximum-path-sum-in-the-matrix_797998)
 - [Ninja And His Friends](https://www.codingninjas.com/codestudio/problems/ninja-and-his-friends_3125885) Tabulation❌
+#### Day 3
+- [Subset Sum Equal To K](https://www.codingninjas.com/codestudio/problems/subset-sum-equal-to-k_1550954)
+- [Partition Equal Subset Sum](https://www.codingninjas.com/codestudio/problems/partition-equal-subset-sum_892980)
+- [Partition a set into two subsets such that the difference of subset sums is minimum](https://www.codingninjas.com/codestudio/problems/partition-a-set-into-two-subsets-such-that-the-difference-of-subset-sums-is-minimum_842494)
+- [Number Of Subsets](https://www.codingninjas.com/codestudio/problems/number-of-subsets_3952532)
+- [Partitions With Given Difference](https://www.codingninjas.com/codestudio/problems/partitions-with-given-difference_3751628)
+- [0 1 Knapsack](https://www.codingninjas.com/codestudio/problems/0-1-knapsack_920542)
+- [Minimum Elements](https://www.codingninjas.com/codestudio/problems/minimum-elements_3843091)
