@@ -1,5 +1,7 @@
 # Dynamic Programming
 
+## Coding Ninja Questions
+
 #### Day 1
 - [Climbing Stairs]()
 - [Frog Jump](https://www.codingninjas.com/codestudio/problems/maximum-sum-of-non-adjacent-elements_843261)
@@ -21,3 +23,8 @@
 - [Partitions With Given Difference](https://www.codingninjas.com/codestudio/problems/partitions-with-given-difference_3751628)
 - [0 1 Knapsack](https://www.codingninjas.com/codestudio/problems/0-1-knapsack_920542)
 - [Minimum Elements](https://www.codingninjas.com/codestudio/problems/minimum-elements_3843091)
+#### Day 4
+- [Target Sum](https://www.codingninjas.com/codestudio/problems/target-sum_4127362?source=youtube&campaign=striver_dp_videos&utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_dp_videos) ❌ 
+- [Ways To Make Coin Change](https://www.codingninjas.com/codestudio/problems/ways-to-make-coin-change_630471)
+- [Unbounded Knapsack](https://www.codingninjas.com/codestudio/problems/unbounded-knapsack_1215029)
+- [Rod Cutting Problem](https://www.codingninjas.com/codestudio/problems/rod-cutting-problem_800284)
