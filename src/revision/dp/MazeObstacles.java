@@ -1,11 +1,11 @@
-package dp;
+package revision.dp;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class MazeObstacles {
-    private static final int mod = (int) (Math.pow(10, 9) + 7);
+    private static final int MOD = (int) (Math.pow(10, 9) + 7);
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int t = scanner.nextInt();
@@ -27,26 +27,26 @@ public class MazeObstacles {
         for (int e : r)
             System.out.println(e);
     }
-
     private static int mazeObstacles(int n, int m, ArrayList<ArrayList<Integer>> mat) {
         int[][] dp = new int[n][m];
-        for (int[] e : dp)
+        for(int[] e: dp)
             Arrays.fill(e, -1);
         return helper(n - 1, m - 1, mat, dp);
     }
-
     private static int helper(int n, int m, ArrayList<ArrayList<Integer>> mat, int[][] dp) {
         if (n == 0 && m == 0)
             return 1;
-        if (n < 0 || m < 0)
+        if (mat.get(n).get(m) == -1)
             return 0;
         if (dp[n][m] != -1)
             return dp[n][m];
-        if (mat.get(n).get(m) == -1)
-            return 0;
-        int left = helper(n, m - 1, mat, dp);
-        int up = helper(n - 1, m, mat, dp);
-        return dp[n][m] = left + up;
+        int l = 0;
+        if (m > 0)
+            l = helper(n, m - 1, mat, dp);
+        int u = 0;
+        if (n > 0)
+            u = helper(n - 1, m, mat, dp);
+        return dp[n][m] = l + u;
     }
 
     private static int tabulation(int n, int m, ArrayList<ArrayList<Integer>> mat) {
@@ -66,9 +66,10 @@ public class MazeObstacles {
                 int u = 0;
                 if (i > 0)
                     u = dp[i - 1][j];
-                dp[i][j] = (l + u) % mod;
+                dp[i][j] = (l + u) % MOD;
             }
         }
         return dp[n - 1][m - 1];
     }
+
 }

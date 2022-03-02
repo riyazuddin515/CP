@@ -1,4 +1,4 @@
-package dp;
+package revision.dp;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,36 +8,37 @@ public class MaximumSumOfNonAdjacentElements {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int t = scanner.nextInt();
-        int[] result = new int[t];
+        int[] r = new int[t];
         for (int i = 0; i < t; i++) {
             int n = scanner.nextInt();
             ArrayList<Integer> nums = new ArrayList<>();
             for (int j = 0; j < n; j++) {
                 nums.add(scanner.nextInt());
             }
-            result[i] = spaceOptimised(nums);
+            r[i] = spaceOptimized(nums);
         }
         scanner.close();
-        for(int e: result)
+        for(int e: r)
             System.out.println(e);
     }
-    private static int maximumNonAdjacentSum(ArrayList<Integer> nums){
+
+    public static int maximumNonAdjacentSum(ArrayList<Integer> nums) {
         int n = nums.size();
-        if (n == 0)
+        if (nums.size() == 0)
             return 0;
         int[] dp = new int[n];
         Arrays.fill(dp, -1);
         return helper(n - 1, nums, dp);
     }
 
-    private static int helper(int ind, ArrayList<Integer> nums, int[] dp){
-        if (ind < 0)
-            return 0;
+    private static int helper(int ind, ArrayList<Integer> nums, int[] dp) {
         if (ind == 0)
             return nums.get(0);
         if (dp[ind] != -1)
             return dp[ind];
-        int pick = nums.get(ind) + helper(ind - 2, nums, dp);
+        int pick = nums.get(ind);
+        if (ind > 1)
+            pick += helper(ind - 2, nums, dp);
         int notPick = helper(ind - 1, nums, dp);
         return dp[ind] = Math.max(pick, notPick);
     }
@@ -46,30 +47,28 @@ public class MaximumSumOfNonAdjacentElements {
         int n = nums.size();
         int[] dp = new int[n];
         dp[0] = nums.get(0);
-        for (int i = 1; i < n; i++){
-            int pick = nums.get(i);
-            if (i > 1)
-                pick += dp[i - 2];
-            int notPick = dp[i - 1];
-            dp[i] = Math.max(pick, notPick);
+        for (int ind = 1; ind < n; ind++) {
+            int pick = nums.get(ind);
+            if (ind > 1)
+                pick += dp[ind - 2];
+            int notPick = dp[ind - 1];
+            dp[ind] = Math.max(pick, notPick);
         }
         return dp[n - 1];
     }
 
-    private static int spaceOptimised(ArrayList<Integer> nums) {
+    private static int spaceOptimized(ArrayList<Integer> nums) {
         int n = nums.size();
         if (n == 1)
             return nums.get(0);
-        int pre1 = nums.get(0), pre2 = 0, curr = 0;
-        for (int i = 1; i < n; i++) {
-            int pick = nums.get(i);
-            if (i > 1)
-                pick += pre2;
+        int pre1 = nums.get(0), pre2 = 0, cur = 0;
+        for (int ind = 1; ind < n; ind++) {
+            int pick = nums.get(ind) + pre2;
             int notPick = pre1;
-            curr = Math.max(pick, notPick);
+            cur = Math.max(pick, notPick);
             pre2 = pre1;
-            pre1 = curr;
+            pre1 = cur;
         }
-        return curr;
+        return cur;
     }
 }
